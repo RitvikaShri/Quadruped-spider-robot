@@ -92,9 +92,9 @@ Each leg’s foot position is represented as:
 ```cpp
 volatile float site_now[4][3];    // current (x, y, z) for each leg
 volatile float site_expect[4][3]; // target (x, y, z) for each leg
-```
-When you call set_site(leg, x, y, z), the code:
 
+When you call set_site(leg, x, y, z), the code:
+```
 Computes the distance from current to target.
 
 Calculates a per-axis speed for that leg using move_speed and speed_multiple.
@@ -103,6 +103,7 @@ Updates site_expect so the servo service can move towards it.
 
 ### 2. Smooth Motion via Timer Interrupt
 
+```cpp
 FlexiTimer2 runs servo_service() periodically (every 20 ms):
 
 FlexiTimer2::set(20, servo_service);
@@ -118,10 +119,11 @@ Converts (x, y, z) to joint angles with cartesian_to_polar().
 Converts those angles to servo commands using polar_to_servo().
 
 Writes the final angle to each servo with servo[leg][j].write(angle);
-
+```
 This gives continuous, smooth motion.
 
 ### 3. Inverse Kinematics
+```cpp
 void cartesian_to_polar(volatile float &alpha,
                         volatile float &beta,
                         volatile float &gamma,
@@ -143,9 +145,10 @@ Adjusts angles depending on which leg (0–3) to account for orientation.
 Offsets angles so they match the physical servo mounting.
 
 Sends the final angles to servo[leg][0..2].
+```
 
 ### 4. Obstacle Avoidance Logic
-
+```cpp
 In loop():
 
 int uS = sonar.ping_cm();
@@ -164,7 +167,7 @@ if (uS < thresh && uS > 1) {
 } else {
     step_forward(1);
 }
-
+```
 
 If the measured distance is below thresh (e.g. 20 cm) and valid:
 
