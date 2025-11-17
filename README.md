@@ -8,7 +8,6 @@ The robot can walk forward and backward, turn on the spot, stand, sit, and perfo
 
 ## 📸 Demo & Screenshots
 
-> 💡 Replace these image paths with your actual files (e.g. `assets/robot.jpg`, `media/demo.gif`, etc.)
 
 ### Robot Overview  
 ![Robot Overview](https://github.com/RitvikaShri/Quadruped-spider-robot/blob/main/img_3.jpeg)
