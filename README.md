@@ -16,7 +16,7 @@ The robot can walk forward and backward, turn on the spot, stand, sit, and perfo
 ![Walking Gait](https://github.com/RitvikaShri/Quadruped-spider-robot/raw/main/WhatsApp%20Video%202025-11-17%20at%2021.16.59%20(1).gif)
 
 ### Obstacle Avoidance in Action  
-![Obstacle Avoidance](images/obstacle-avoidance.jpg)
+![Obstacle Avoidance](https://github.com/RitvikaShri/Quadruped-spider-robot/raw/main/img_1.jpeg)
 
 ### Hardware Setup  
 ![Hardware Setup](https://github.com/RitvikaShri/Quadruped-spider-robot/raw/main/img_2.jpeg)
