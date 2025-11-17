@@ -20,7 +20,7 @@ The robot can walk forward and backward, turn on the spot, stand, sit, and perfo
 ![Obstacle Avoidance](images/obstacle-avoidance.jpg)
 
 ### Hardware Setup  
-![Hardware Setup](images/hardware-setup.jpg)
+![Hardware Setup]([images/hardware-setup.jpg](https://github.com/RitvikaShri/Quadruped-spider-robot/blob/main/img_2.jpeg))
 
 ---
 
