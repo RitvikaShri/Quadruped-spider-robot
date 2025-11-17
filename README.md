@@ -92,6 +92,7 @@ Each leg’s foot position is represented as:
 ```cpp
 volatile float site_now[4][3];    // current (x, y, z) for each leg
 volatile float site_expect[4][3]; // target (x, y, z) for each leg
+```
 When you call set_site(leg, x, y, z), the code:
 
 Computes the distance from current to target.
@@ -100,7 +101,7 @@ Calculates a per-axis speed for that leg using move_speed and speed_multiple.
 
 Updates site_expect so the servo service can move towards it.
 
-2. Smooth Motion via Timer Interrupt
+### 2. Smooth Motion via Timer Interrupt
 
 FlexiTimer2 runs servo_service() periodically (every 20 ms):
 
@@ -120,7 +121,7 @@ Writes the final angle to each servo with servo[leg][j].write(angle);
 
 This gives continuous, smooth motion.
 
-3. Inverse Kinematics
+### 3. Inverse Kinematics
 void cartesian_to_polar(volatile float &alpha,
                         volatile float &beta,
                         volatile float &gamma,
@@ -143,7 +144,7 @@ Offsets angles so they match the physical servo mounting.
 
 Sends the final angles to servo[leg][0..2].
 
-4. Obstacle Avoidance Logic
+### 4. Obstacle Avoidance Logic
 
 In loop():
 
@@ -175,12 +176,12 @@ If the path is clear:
 
 Robot continues walking forward one step at a time.
 
-🚀 Getting Started
-1. Clone This Repository
+# 🚀 Getting Started
+### 1. Clone This Repository
 git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
 
-2. Open the Project in Arduino IDE
+### 2. Open the Project in Arduino IDE
 
 Open the .ino file that contains the main code.
 
@@ -190,11 +191,11 @@ Tools → Board
 
 Tools → Port
 
-3. Install Required Libraries
+### 3. Install Required Libraries
 
 Install the libraries listed in the Libraries Used section.
 
-4. Wiring
+### 4. Wiring
 
 Connect the 12 servos to digital pins:
 2–13 according to:
@@ -215,7 +216,7 @@ Connect the ultrasonic sensor:
 
 Power the servos from a separate power supply (shared ground with Arduino).
 
-5. Upload & Run
+### 5. Upload & Run
 
 Click Upload in the Arduino IDE.
 
@@ -247,7 +248,7 @@ void setup() {
   // step_forward(5);
 }
 
-🛠️ Customization Ideas
+# 🛠️ Customization Ideas
 
 Adjust walking speed: tweak leg_move_speed, body_move_speed, spot_turn_speed.
 
@@ -259,13 +260,13 @@ Add more sensors (IR, IMU) or a Bluetooth/ESP8266 module for remote control.
 
 Implement different gaits (crawl, trot, bound) by changing leg sequences.
 
-📝 License
+# 📝 License
 
 Add your preferred license here, for example:
 
 MIT License – feel free to use, modify, and build on this project.
 
-💬 Acknowledgements
+# 💬 Acknowledgements
 
 Based on classic Arduino quadruped/spider robot designs and inverse kinematics examples.
 
